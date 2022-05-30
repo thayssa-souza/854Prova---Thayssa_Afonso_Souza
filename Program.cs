@@ -82,20 +82,20 @@ class Program
             bool posicaoValida = false;
 
             while(!posicaoValida)
-            {
+            {   z = 0;
                 Console.WriteLine($"Qual será a posição de {navio}?");
                 Console.WriteLine("Por exemplo, para PS digite A1A2A3A4A5 ou A1B1C1D1E1.");
                 posicao = Console.ReadLine();
                  foreach(char letra in posicao)
                     {
-                        letrasValidas.Contains(letra);
-                            if(true)
-                                z++;
-
+                        if(letrasValidas.Contains(letra) == true)
+                            z++;
                     }
+                    
                     if(tupla.Tamanho != z)
                     {
                         Console.WriteLine($"Tamanho de embarcação incorreto. Digite um tamanho válido: {navio} ocupa {tupla.Tamanho} posições.");
+                        continue;
                     }
 
                 for(int i = 0; i < posicao.Length; i = i + 2)
@@ -188,7 +188,7 @@ class Program
         string jogador1 = "";
         string jogador2 = "";
 
-        string[] jogadasPC = new string[] {"B5", "B6", "B7", "B8", "B9", "E2", "F2", "G2", "H2", "I2","A1", "A2", "A3", "A4", "A5", "C9","D9", "E9", "F9", "G9", "J10", "J9", "J8", "J7", "J6","B1", "C1", "D1", "E1", "F1","H2", "H3", "H4", "H5", "H6","B3", "B4", "I3", "I4", "I5", "I6", "I7", "I8"};
+        string[] jogadasPC = new string[] {"B5", "B6", "B7", "B8", "B9", "E2", "F2", "G2", "H2", "I2","A1", "J2", "A2", "A3", "A4", "A5", "C9","D9", "E9", "F9", "G9", "J10", "J9", "J8", "J7", "J6","B1", "C1", "D1", "E1", "F1", "H7", "H3", "H4", "H5", "H6", "B3", "B4", "I3", "I4", "I5", "I6", "I7", "I8", "B2", "B10", "A6", "A7", "A8", "A9", "A10","C2", "C3", "C4", "C5", "C10", "C6", "C8", "C7", "D2", "D3", "E3", "F3", "G3", "J3", "D4", "D5", "D6", "D7", "D8", "D10", "G1", "H1", "I1", "J1", "E4", "F4", "G4", "J4", "E5", "F5", "G5", "J5", "H9", "I9", "E10", "F10", "G10", "H10", "I10", "E8", "F8", "G8", "H8", "E7", "E6", "F6", "F7", "G7", "G6"};
         int numeroJogadasPC = 0;
 
         var indiceLinha = new Dictionary<string, int>();
@@ -372,18 +372,18 @@ class Program
                 tabuleiroTiroJogador1[indiceLinha[linha], indiceColuna[coluna]] = " X ";
                 Console.WriteLine("BUM... EMBARCAÇÃO!");
             }
-
             indexLinha = tabuleiroTiroJogador1.GetLength(0);
-            indexColuna = tabuleiroTiroJogador1.GetLength(1);
-            for (var i = 0; i < indexLinha; i++)
-            {
-                for (var j = 0; j < indexLinha; j++)
+                indexColuna = tabuleiroTiroJogador1.GetLength(1);
+                for (var i = 0; i < indexLinha; i++)
                 {
-                    Console.Write($"{tabuleiroTiroJogador1[i, j]}");
+                    for (var j = 0; j < indexLinha; j++)
+                    {
+                        Console.Write($"{tabuleiroTiroJogador1[i, j]}");
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
-            }
 
+            ganhou = true;
             for(int i = 0; i < tabuleiroCheioJogador1.GetLength(0); i++)
             {
                 for(int j = 0; j < tabuleiroCheioJogador1.GetLength(1); j++)
@@ -400,15 +400,17 @@ class Program
                     }
                 }
             }
-
             if(ganhou)
             {
-                Console.WriteLine($"Parabéns {jogador2} você DERROTOU o {jogador1}!");
+                if(novaResposta == "N")
+                Console.WriteLine($"Parabéns {jogador2} DERROTOU o {jogador1}!");
+                else
+                Console.WriteLine($"{jogador1} você perdeu!");
                 break;
             }
+            else
+                continue;
         } 
                 
-    }
-        
-    
+    }   
 }
