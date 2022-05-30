@@ -1,0 +1,15 @@
+C:\Users\thays\Documents\My Web Sites\Dotnet\obj\Debug\net6.0\Dotnet.csproj.AssemblyReference.cache
+C:\Users\thays\Documents\My Web Sites\Dotnet\obj\Debug\net6.0\Dotnet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thays\Documents\My Web Sites\Dotnet\obj\Debug\net6.0\Dotnet.AssemblyInfoInputs.cache
+C:\Users\thays\Documents\My Web Sites\Dotnet\obj\Debug\net6.0\Dotnet.AssemblyInfo.cs
+C:\Users\thays\Documents\My Web Sites\Dotnet\obj\Debug\net6.0\Dotnet.csproj.CoreCompileInputs.cache
+C:\Users\thays\Documents\My Web Sites\Dotnet\bin\Debug\net6.0\Dotnet.exe
+C:\Users\thays\Documents\My Web Sites\Dotnet\bin\Debug\net6.0\Dotnet.deps.json
+C:\Users\thays\Documents\My Web Sites\Dotnet\bin\Debug\net6.0\Dotnet.runtimeconfig.json
+C:\Users\thays\Documents\My Web Sites\Dotnet\bin\Debug\net6.0\Dotnet.dll
+C:\Users\thays\Documents\My Web Sites\Dotnet\bin\Debug\net6.0\Dotnet.pdb
+C:\Users\thays\Documents\My Web Sites\Dotnet\obj\Debug\net6.0\Dotnet.dll
+C:\Users\thays\Documents\My Web Sites\Dotnet\obj\Debug\net6.0\refint\Dotnet.dll
+C:\Users\thays\Documents\My Web Sites\Dotnet\obj\Debug\net6.0\Dotnet.pdb
+C:\Users\thays\Documents\My Web Sites\Dotnet\obj\Debug\net6.0\Dotnet.genruntimeconfig.cache
+C:\Users\thays\Documents\My Web Sites\Dotnet\obj\Debug\net6.0\ref\Dotnet.dll
