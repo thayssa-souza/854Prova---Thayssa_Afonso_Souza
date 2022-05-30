@@ -40,12 +40,26 @@ class Program
 
 
         bool todasEmbarcacoesColocadas = false;
-        
+        int z = 0;
+        string antecessorLinha = "";
+        string antecessorColuna = "";
         Dictionary<string, int> contarQuantidade = new Dictionary<string, int>();
         contarQuantidade.Add("PS", 0);
         contarQuantidade.Add("NT", 0);
         contarQuantidade.Add("DS", 0);
         contarQuantidade.Add("SB", 0);
+        string posicao = "";
+        List<char> letrasValidas = new List<char>();
+        letrasValidas.Add('A');
+        letrasValidas.Add('B');
+        letrasValidas.Add('C');
+        letrasValidas.Add('D');
+        letrasValidas.Add('E');
+        letrasValidas.Add('F');
+        letrasValidas.Add('G');
+        letrasValidas.Add('H');
+        letrasValidas.Add('I');
+        letrasValidas.Add('J');
 
         while(todasEmbarcacoesColocadas == false)
         {
@@ -67,14 +81,22 @@ class Program
 
             bool posicaoValida = false;
 
-            string posicao = "";
-
             while(!posicaoValida)
             {
                 Console.WriteLine($"Qual será a posição de {navio}?");
+                Console.WriteLine("Por exemplo, para PS digite A1A2A3A4A5 ou A1B1C1D1E1.");
                 posicao = Console.ReadLine();
+                 foreach(char letra in posicao)
+                    {
+                        letrasValidas.Contains(letra);
+                            if(true)
+                                z++;
 
-                Console.WriteLine($"Posicao.Length: {posicao.Length}");
+                    }
+                    if(tupla.Tamanho != z)
+                    {
+                        Console.WriteLine($"Tamanho de embarcação incorreto. Digite um tamanho válido: {navio} ocupa {tupla.Tamanho} posições.");
+                    }
 
                 for(int i = 0; i < posicao.Length; i = i + 2)
                 {
@@ -86,7 +108,7 @@ class Program
                         coluna = posicao.Substring(i + 1, 2);
                         i++;
                     }
-                    
+
                     if(jogadorTabuleiro[posicaoLinha[linha], posicaoColuna[coluna]] != " . ") 
                     {
                         Console.WriteLine("Posição ja ocupada por outra embarcação.");
@@ -115,7 +137,7 @@ class Program
 
             contarQuantidade[navio]++;
 
-            if(contarQuantidade["PS"] == 1 && contarQuantidade["NT"] == 0 && contarQuantidade["DS"] == 0 && contarQuantidade["SB"] == 0)
+            if(contarQuantidade["PS"] == 1 && contarQuantidade["NT"] == 2 && contarQuantidade["DS"] == 3 && contarQuantidade["SB"] == 4)
             {
                 Console.WriteLine("Todas as embarcações foram colocadas.");
                 todasEmbarcacoesColocadas = true;
@@ -166,7 +188,7 @@ class Program
         string jogador1 = "";
         string jogador2 = "";
 
-        string[] jogadasPC = new string[] {"B5", "B6", "B7", "E2", "F2", "G2", "H2", "I2"};
+        string[] jogadasPC = new string[] {"B5", "B6", "B7", "B8", "B9", "E2", "F2", "G2", "H2", "I2","A1", "A2", "A3", "A4", "A5", "C9","D9", "E9", "F9", "G9", "J10", "J9", "J8", "J7", "J6","B1", "C1", "D1", "E1", "F1","H2", "H3", "H4", "H5", "H6","B3", "B4", "I3", "I4", "I5", "I6", "I7", "I8"};
         int numeroJogadasPC = 0;
 
         var indiceLinha = new Dictionary<string, int>();
@@ -195,9 +217,9 @@ class Program
 
         var listaTupla = new List<(string Embarcacao, int Tamanho, int Quantidade)>();
         listaTupla.Add(("PS", 5, 1));
-        listaTupla.Add(("NT", 4, 0));
-        listaTupla.Add(("DS", 3, 0));
-        listaTupla.Add(("SB", 2, 0));
+        listaTupla.Add(("NT", 4, 2));
+        listaTupla.Add(("DS", 3, 3));
+        listaTupla.Add(("SB", 2, 4));
 
 
         Console.WriteLine("Bem-vindo(a) ao Batalha Naval.");
